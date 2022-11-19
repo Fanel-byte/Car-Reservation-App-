@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@drawable/background_voiture"
+    android:backgroundTint="#ADE6DFDF">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:layout_marginEnd="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/Availability"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/pin" />
+
+    <ImageView
+        android:id="@+id/imageVoiture"
+        android:layout_width="190dp"
+        android:layout_height="157dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/NomVoiture_Marque_Modèle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="monospace"
+        android:text="Peugeot 301"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/imageVoiture"
+        app:layout_constraintTop_toTopOf="@+id/imageVoiture" />
+
+    <TextView
+        android:id="@+id/TypeMoteur"
+        android:layout_width="163dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="monospace"
+        android:text="72 à 115 chevaux"
+        android:textAlignment="textStart"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageVoiture"
+        app:layout_constraintTop_toBottomOf="@+id/NomVoiture_Marque_Modèle" />
+
+    <TextView
+        android:id="@+id/TarifKmHeure"
+        android:layout_width="134dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="monospace"
+        android:text="1000 km/heure"
+        android:textColor="#000000"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageVoiture"
+        app:layout_constraintTop_toBottomOf="@+id/TypeMoteur" />
+
+    <TextView
+        android:id="@+id/Availability"
+        android:layout_width="143dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/abeezee"
+        android:text="Available"
+        android:textColor="#48E64F"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageVoiture"
+        app:layout_constraintStart_toEndOf="@+id/imageVoiture"
+        app:layout_constraintTop_toBottomOf="@+id/TarifKmHeure" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
