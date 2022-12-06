@@ -5,11 +5,14 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatDrawableManager.get
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 import java.lang.reflect.Array.get
@@ -36,16 +39,12 @@ class RecyclerViewAdapter(val context: Context,var content:ArrayList<Voiture>):R
         holder.moteur.text=currentITem.moteur
         holder.tarif.text= currentITem.tarif.toString()
         holder.avaliability.text= currentITem.availability.toString()
+
         holder.itemView.setOnClickListener {
+            val data = bundleOf("position" to position)
+            it.findNavController().navigate(R.id.action_mainFragment_to_detailsFragment,data)
 
-            val intent = Intent(context, MainActivity2::class.java)
-            //envoyer donnée
-            intent.putExtra("car", currentITem)
 
-            //intent.putExtra("person", person1)
-            context.startActivity(intent)
-            Toast.makeText(context,currentITem.marque,Toast.LENGTH_SHORT).show()
-            //pour supprimer ancienne fenetre
 
         }
 
